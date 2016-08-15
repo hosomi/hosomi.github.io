@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'memo'
+project = 'development memo'
 copyright = '2016, hosomi'
 author = 'hosomi'
 

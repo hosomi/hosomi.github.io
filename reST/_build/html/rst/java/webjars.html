@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.1. WebJars の利用 &mdash; development memo 0.0.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="development memo 0.0.1 ドキュメント" href="../../index.html"/>
+        <link rel="up" title="1. Java の開発メモ" href="../java.html"/>
+        <link rel="prev" title="1. Java の開発メモ" href="../java.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> development memo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../java.html">1. Java の開発メモ</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. WebJars の利用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.1.1. WebJars とは</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-webjars-gradle">1.1.2. example WebJars Gradle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ide-eclipse">1.1.2.1. 依存関係を解決する（コマンドまたは IDE(Eclipse)）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.1.2.2. 依存関係を解決後に実際にダウンロードされたファイル</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webjars-jar">1.1.2.3. WebJars で管理されている jar の調べ方</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webjars-thymeleaf">1.1.2.4. WebJars を テンプレートエンジン(Thymeleaf)からの利用方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.1.2.5. 補足：バージョン番号の隠蔽</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">development memo</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../java.html">1. Java の開発メモ</a> &raquo;</li>
+      
+    <li>1.1. WebJars の利用</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/rst/java/webjars.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="webjars">
+<span id="index-0"></span><h1>1.1. WebJars の利用<a class="headerlink" href="#webjars" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><strong>記事：2016.08.15 現在</strong></p>
+<p>動作検証：</p>
+<ul class="simple">
+<li>Spring Boot 1.4.0.RELEASE</li>
+<li>Thymeleaf (Spring Boot に依存)</li>
+<li>Gradle(Eclipse Plug-ins for Gradle 1.0.17)</li>
+</ul>
+<div class="section" id="id1">
+<h2>1.1.1. WebJars とは<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>JavaScript や CSS などのフロントサイドのライブラリの依存関係を、 Maven （Gradle）で管理できるようになった仕組み。</li>
+<li>Maven （Gradle） なので依存関係の管理もできます。</li>
+</ul>
+</div>
+<div class="section" id="example-webjars-gradle">
+<h2>1.1.2. example WebJars Gradle<a class="headerlink" href="#example-webjars-gradle" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Bootstrap と jQuery を WebJars として利用をする場合。</p>
+<div class="literal-block-wrapper container" id="build-gradle">
+<div class="code-block-caption"><span class="caption-text">build.gradle(依存関係の追加のみ):</span><a class="headerlink" href="#build-gradle" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-jproperties"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">compile(&#39;org.webjars</span><span class="o">:</span><span class="s">jquery:2.2.4&#39;)</span>
+<span class="na">compile(&#39;org.webjars</span><span class="o">:</span><span class="s">bootstrap:3.3.7&#39;)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="ide-eclipse">
+<h3>1.1.2.1. 依存関係を解決する（コマンドまたは IDE(Eclipse)）<a class="headerlink" href="#ide-eclipse" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="literal-block-wrapper container" id="id2">
+<div class="code-block-caption"><span class="caption-text">コマンド:</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-cmd"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>gradle dependencies
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>IDE(Eclipse)：</p>
+<ol class="arabic simple">
+<li>プロジェクトで右クリック</li>
+<li>メニューから 「Gradle」 を探す</li>
+<li>「Refresh Gradle Project」 を選択</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>1.1.2.2. 依存関係を解決後に実際にダウンロードされたファイル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/webjars_1.png"><img alt="../../_images/webjars_1.png" src="../../_images/webjars_1.png" style="width: 318.0px; height: 426.0px;" /></a>
+<p>指定したバージョンのファイルがダウンロードされていることが分かります。</p>
+</div>
+<div class="section" id="webjars-jar">
+<h3>1.1.2.3. WebJars で管理されている jar の調べ方<a class="headerlink" href="#webjars-jar" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>WebJars(<a class="reference external" href="http://www.webjars.org/">http://www.webjars.org/</a>) にアクセス</li>
+<li>画面の Filter または ブラウザのページ内検索機能で対象を検索。</li>
+<li>vesions からバージョンを指定（初期値は最新版です）。</li>
+<li>Build Tool から Gradle, Maven 等を選択</li>
+<li>Build Tool のテキストをコピーし利用する。</li>
+</ol>
+</div>
+<div class="section" id="webjars-thymeleaf">
+<h3>1.1.2.4. WebJars を テンプレートエンジン(Thymeleaf)からの利用方法<a class="headerlink" href="#webjars-thymeleaf" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="literal-block-wrapper container" id="thymeleaf">
+<div class="code-block-caption"><span class="caption-text">Thymeleaf:</span><a class="headerlink" href="#thymeleaf" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">th:href</span><span class="o">=</span><span class="s">&quot;@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">th:src</span><span class="o">=</span><span class="s">&quot;@{/webjars/jquery/2.2.4/jquery.min.js}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">th:src</span><span class="o">=</span><span class="s">&quot;@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>※Thymeleaf で利用できる href,src ディレクティブは説明の為、省きます。</p>
+</div>
+<div class="section" id="id4">
+<h3>1.1.2.5. 補足：バージョン番号の隠蔽<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>WebJars の各 jar ファイルのバージョンを上げたい場合、各ページ（ビュー）にバージョンを指定している場合、
+ページ数が増えた場合、個別に修正していくのはメンテナンス性がよくありません。
+共通のページを各ページでインクルードという対応もありますが、バージョンを隠蔽する方法が用意されています。</p>
+<div class="section" id="webjars-locator">
+<h4>1.1.2.5.1. Webjars Locator を依存関係に追加<a class="headerlink" href="#webjars-locator" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>バージョンを隠蔽する機能の実現に Webjars Locator を利用します。</p>
+<ul class="simple">
+<li>Project Page(GitHub): <a class="reference external" href="https://github.com/webjars/webjars-locator">https://github.com/webjars/webjars-locator</a></li>
+<li>Maven Repository: <a class="reference external" href="https://mvnrepository.com/artifact/org.webjars/webjars-locator">https://mvnrepository.com/artifact/org.webjars/webjars-locator</a></li>
+</ul>
+<p>Gradle の場合：</p>
+<div class="literal-block-wrapper container" id="id5">
+<div class="code-block-caption"><span class="caption-text">build.gradle:</span><a class="headerlink" href="#id5" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-jproperties"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">compile(&#39;org.webjars</span><span class="o">:</span><span class="s">webjars-locator:0.32&#39;)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="spring-boot">
+<h4>1.1.2.5.2. 静的リソースのアクセス定義を行う(Spring Boot)<a class="headerlink" href="#spring-boot" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>WebJar から静的リソースを取得するための設定を行います。</p>
+<div class="literal-block-wrapper container" id="webconfig">
+<div class="code-block-caption"><span class="caption-text">WebConfig（該当箇所のみ）</span><a class="headerlink" href="#webconfig" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * 静的リソースに対する定義。</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param registry {@link ResourceHandlerRegistry}</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addResourceHandlers</span><span class="o">(</span><span class="n">ResourceHandlerRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+
+   <span class="c1">// webjars の定義</span>
+   <span class="n">registry</span><span class="o">.</span><span class="na">addResourceHandler</span><span class="o">(</span><span class="s">&quot;/webjars/**&quot;</span><span class="o">).</span><span class="na">addResourceLocations</span><span class="o">(</span><span class="s">&quot;classpath:/META-INF/resources/webjars/&quot;</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">resourceChain</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="c1">// 自動で WebJarsResourceResolver が有効化される。</span>
+         <span class="o">.</span><span class="na">addResolver</span><span class="o">(</span><span class="k">new</span> <span class="n">GzipResourceResolver</span><span class="o">());</span> <span class="c1">// gz ファイルへのアクセス有効化。</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>全文（参考）：
+<a class="reference external" href="https://github.com/hosomi/develop-spring-template/blob/master/src/main/java/jp/template/config/WebConfig.java">https://github.com/hosomi/develop-spring-template/blob/master/src/main/java/jp/template/config/WebConfig.java</a></p>
+</div>
+<div class="section" id="id6">
+<h4>1.1.2.5.3. WebJars を テンプレートエンジン(Thymeleaf)からのバージョン指定なしで利用する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="literal-block-wrapper container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Thymeleaf:</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">th:href</span><span class="o">=</span><span class="s">&quot;@{/webjars/bootstrap/css/bootstrap.min.css}&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">th:src</span><span class="o">=</span><span class="s">&quot;@{/webjars/jquery/jquery.min.js}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">th:src</span><span class="o">=</span><span class="s">&quot;@{/webjars/bootstrap/js/bootstrap.min.js}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>↓</p>
+<div class="literal-block-wrapper container" id="html">
+<div class="code-block-caption"><span class="caption-text">生成されるHTML:</span><a class="headerlink" href="#html" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/template/webjars/bootstrap/3.3.7/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/template/webjars/jquery/2.2.4/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/template/webjars/bootstrap/3.3.7/js/bootstrap.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>生成時はバージョンが付加されます、各 Jar のバージョン変更を行った場合、バージョンが自動的に変わります。</p>
+<p><strong>ファイル構成が変わらない限り定義箇所のメンテナンスは不要です。</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../java.html" class="btn btn-neutral" title="1. Java の開発メモ" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, hosomi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

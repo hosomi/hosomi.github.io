@@ -1,5 +1,12 @@
-# hosomi.github.io
+http://hosomi.github.io 
+=============
 
-http://hosomi.github.io
 
-  ペンディング中
+# 開発メモ
+
+## Java
+
+* [WebJars(SpringBoot, Thymeleaf)](http://hosomi.github.io/reST/_build/html/rst/java/webjars.html "WebJars(SpringBoot, Thymeleaf)")
+
+
+
