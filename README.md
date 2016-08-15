@@ -1,5 +1,5 @@
-http://hosomi.github.io 
-=============
+<!-- http://hosomi.github.io 
+=============-->
 
 
 # 開発メモ
