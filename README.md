@@ -2,9 +2,9 @@
 =============-->
 
 
-# [development memo](http://hosomi.github.io/gitbook/_book/ development memo")
+# [development memo](http://hosomi.github.io/gitbook/_book/ "development memo")
 
-## [Java](http://hosomi.github.io/gitbook/_book/java/ Java")
+## [Java](http://hosomi.github.io/gitbook/_book/java/index.html "Java")
 
 * [WebJars(SpringBoot, Thymeleaf)](http://hosomi.github.io/gitbook/_book/java/webjars.html "WebJars(SpringBoot, Thymeleaf)")
 
