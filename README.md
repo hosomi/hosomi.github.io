@@ -2,11 +2,11 @@
 =============-->
 
 
-# 開発メモ
+# development memo
 
 ## Java
 
-* [WebJars(SpringBoot, Thymeleaf)](http://hosomi.github.io/reST/_build/html/rst/java/webjars.html "WebJars(SpringBoot, Thymeleaf)")
+* [WebJars(SpringBoot, Thymeleaf)](http://hosomi.github.io/gitbook/_book/ "WebJars(SpringBoot, Thymeleaf)")
 
 
 
