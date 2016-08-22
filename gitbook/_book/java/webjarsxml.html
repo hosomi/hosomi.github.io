@@ -1,0 +1,348 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>WebJarsの利用(XML 版) · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="webjars.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    development memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="webjars.html">
+            
+                <a href="webjars.html">
+            
+                    
+                    WebJars の利用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="webjarsxml.html">
+            
+                <a href="webjarsxml.html">
+            
+                    
+                    WebJarsの利用(XML 版)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >WebJarsの利用(XML 版)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="webjars&#x306E;&#x5229;&#x7528;-xml-&#x7248;">WebJars&#x306E;&#x5229;&#x7528; (XML &#x7248;)</h2><p>2016.08.22 &#x8A18;&#x5165;</p><p>SpringBoot + gradle &#x7248;&#x306F;<a title="WebJars&#x306E;&#x5229;&#x7528;" href="webjars.html">WebJars&#x306E;&#x5229;&#x7528;</a> &#x3092;&#x53C2;&#x7167;&#x3002;</p><p>WebJars &#x81EA;&#x4F53;&#x306E;&#x8AAC;&#x660E;&#x3082;&#x5408;&#x308F;&#x305B;&#x3066;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><hr><h3 id="&#x691C;&#x8A3C;&#x74B0;&#x5883;">&#x691C;&#x8A3C;&#x74B0;&#x5883;</h3><ul><li>Spring Framework 4.3.2.RELEASE
+</li>
+<li>JSTL 1.2 (View)
+</li>
+<li>Eclipse Neon Release (4.6.0)
+<ul><li>Maven(Eclipse plug-in : m2e - Maven 1.7.0.20160603-1933)
+</li></ul>
+</li></ul>
+<h3 id="example-webjars-maven">Example WebJars Maven</h3><p>Bootstrap &#x3068; jQuery &#x3092; WebJars &#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x3092;&#x3059;&#x308B;&#x5834;&#x5408;&#x3002;</p><p>&#xFF08;&#x5408;&#x308F;&#x305B;&#x3066;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x756A;&#x53F7;&#x306E;&#x96A0;&#x853D;&#x3082;&#x540C;&#x6642;&#x306B;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;&#xFF09;</p><p>webjars-locator, bootstrap, jquery &#x306E;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p><ul><li>pom.xml(&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x306E;&#x8FFD;&#x52A0;&#x306E;&#x307F;):
+<pre><code class="lang-XML"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.webjars<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>webjars-locator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.32<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.webjars<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>bootstrap<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.webjars<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jquery<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.2.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</li></ul>
+<h3 id="&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x5B9A;&#x7FA9;&#x3092;&#x884C;&#x3046;spring-mvc-xml-&#x5B9A;&#x7FA9;">&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x5B9A;&#x7FA9;&#x3092;&#x884C;&#x3046;(Spring MVC XML &#x5B9A;&#x7FA9;)</h3><ul><li>mvc-config.xml:
+</li></ul>
+<pre><code class="lang-XML"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span>
+    <span class="hljs-attr">xmlns:mvc</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/mvc&quot;</span> <span class="hljs-attr">xmlns:tx</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/tx&quot;</span>
+    <span class="hljs-attr">xmlns:util</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/util&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd&quot;</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--&#x30FB;&#x30FB;&#x30FB; &#x7701;&#x7565; --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mvc:resources</span> <span class="hljs-attr">mapping</span>=<span class="hljs-string">&quot;/static/**&quot;</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;/webjars/&quot;</span>&gt;</span>       <span class="hljs-comment">&lt;!-- 1 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mvc:cache-control</span> <span class="hljs-attr">cache-public</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">max-age</span>=<span class="hljs-string">&quot;2592000&quot;</span> /&gt;</span>   <span class="hljs-comment">&lt;!-- 2 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mvc:resource-chain</span> <span class="hljs-attr">resource-cache</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>                    <span class="hljs-comment">&lt;!-- 3 --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mvc:resolvers</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.web.servlet.resource.GzipResourceResolver&quot;</span> /&gt;</span> <span class="hljs-comment">&lt;!-- 4 --&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:resolvers</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:resource-chain</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:resources</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--&#x30FB;&#x30FB;&#x30FB; &#x7701;&#x7565; --&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></code></pre>
+<p>&#x65E2;&#x5B58;&#x306E;&#x5B9A;&#x7FA9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p><ol><li>webjars &lt;- static &#x3068;&#x3057;&#x3066;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x307E;&#x3059;&#x3002;
+</li>
+<li>&#x5168;&#x4F53;&#x306E;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x6709;&#x52B9; max-age&#xFF1A;&#x6709;&#x52B9;&#x671F;&#x9593;(&#x79D2;&#x5358;&#x4F4D;)&#x306E;&#x8A2D;&#x5B9A;
+</li>
+<li>&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x6709;&#x52B9;
+</li>
+<li>Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;
+</li></ol>
+<h3 id="webjars-&#x3092;-&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30A8;&#x30F3;&#x30B8;&#x30F3;jstl&#x304B;&#x3089;&#x306E;&#x5229;&#x7528;&#x65B9;&#x6CD5;">WebJars &#x3092; &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30A8;&#x30F3;&#x30B8;&#x30F3;(JSTL)&#x304B;&#x3089;&#x306E;&#x5229;&#x7528;&#x65B9;&#x6CD5;</h3><ul><li>JSTL:
+</li></ul>
+<pre><code class="lang-HTML">
+<span class="hljs-tag">&lt;<span class="hljs-name">%@</span> <span class="hljs-attr">taglib</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">&quot;c&quot;</span>    <span class="hljs-attr">uri</span>=<span class="hljs-string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>  %&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%@</span> <span class="hljs-attr">taglib</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">&quot;form&quot;</span> <span class="hljs-attr">uri</span>=<span class="hljs-string">&quot;http://www.springframework.org/tags/form&quot;</span> %&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%@</span> <span class="hljs-attr">page</span> <span class="hljs-attr">language</span>=<span class="hljs-string">&quot;java&quot;</span> <span class="hljs-attr">contentType</span>=<span class="hljs-string">&quot;text/html; charset=UTF-8&quot;</span> <span class="hljs-attr">pageEncoding</span>=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-string">%</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">%--</span> &#x30FB;&#x30FB;&#x30FB; &#x7701;&#x7565;<span class="hljs-attr">--</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;c:url value=&apos;/static/bootstrap/css/bootstrap.min.css&apos;/&gt;&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;c:url value=&apos;/static/jquery/jquery.min.js&apos;/&gt;&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;c:url value=&apos;/static/bootstrap/js/bootstrap.min.js&apos;/&gt;&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">%--</span> &#x30FB;&#x30FB;&#x30FB; &#x7701;&#x7565;<span class="hljs-attr">--</span>&gt;</span>
+</code></pre>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3><ol><li><p>Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x4F8B;&#xFF1A;bootstrap &#x306E; webjars</p><p><img alt="Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x4F8B;" src="images/webjarsxml_1.png" title="Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x4F8B;"></p></li>
+<li><p>Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30D8;&#x30C3;&#x30C0;&#x30FC;
+<img alt="Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30D8;&#x30C3;&#x30C0;&#x30FC;" src="images/webjarsxml_2.png" title="Gzip &#x5316;&#x3055;&#x308C;&#x305F;&#x9759;&#x7684;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30D8;&#x30C3;&#x30C0;&#x30FC;"></p></li></ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webjars.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: WebJars の利用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"WebJarsの利用(XML 版)","level":"1.2.2","depth":2,"previous":{"title":"WebJars の利用","level":"1.2.1","depth":2,"path":"java/webjars.md","ref":"java/webjars.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/webjarsxml.md","mtime":"2016-08-22T02:39:44.200Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-22T03:02:28.200Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

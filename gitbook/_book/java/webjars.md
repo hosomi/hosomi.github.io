@@ -2,6 +2,8 @@
 
 2016.08.16 記入
 
+SpringMVC（XML構成） + Maven 版は[WebJarsの利用(XML 版)](webjarsxml.html "WebJarsの利用(XML 版)") を参照。
+
 ***
 
 ### WebJars とは
@@ -106,6 +108,7 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 ```
 
 
+
 ##### WebJars を テンプレートエンジン(Thymeleaf)からのバージョン指定なしで利用する
 
 * Thymeleaf:
@@ -127,3 +130,4 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 生成時はバージョンが付加されます、各 Jar のバージョン変更を行った場合、バージョンが自動的に変わります。
 
 **ファイル構成が変わらない限り定義箇所のメンテナンスは不要です。**
+
