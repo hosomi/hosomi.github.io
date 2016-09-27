@@ -1,0 +1,363 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>TomEE を CentOS7 にインストール · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    development memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../java/">
+            
+                <a href="../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../java/webjars.html">
+            
+                <a href="../java/webjars.html">
+            
+                    
+                    WebJars の利用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../java/webjarsxml.html">
+            
+                <a href="../java/webjarsxml.html">
+            
+                    
+                    WebJarsの利用(XML 版)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Infra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="tomeeInstallCentOS7.html">
+            
+                <a href="tomeeInstallCentOS7.html">
+            
+                    
+                    TomEE を CentOS7 にインストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >TomEE を CentOS7 にインストール</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="tomee-&#x3092;-centos7-&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;">TomEE &#x3092; CentOS7 &#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;</h2><p>2016.09.27 &#x8A18;&#x5165;</p><h3 id="tomee-&#x3068;&#x306F;">TomEE &#x3068;&#x306F;</h3><ul><li>Tomcat + Java EE = TomEE  
+</li></ul>
+<p><strong> Java Enterprise Edition &#x306E;&#x6A5F;&#x80FD;&#x3092;&#x5229;&#x7528;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x901A;&#x5E38;&#x306F; Tomcat &#x3067;&#x5341;&#x5206;&#x3067;&#x3059;&#x3002;</strong></p><p><a href="https://en.wikipedia.org/wiki/Apache_TomEE" target="_blank">https://en.wikipedia.org/wiki/Apache_TomEE</a></p><blockquote><p>Apache TomEE (pronounced &quot;Tommy&quot;)</p></blockquote><p>&#x30C8;&#x30DF;&#x30FC;&#x3068;&#x547C;&#x3076;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p><h3 id="&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;">&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;</h3><p>super &#x30E6;&#x30FC;&#x30B6;&#x307E;&#x305F;&#x306F; root &#x30E6;&#x30FC;&#x30B6;&#x3067;&#x4F5C;&#x696D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><p>&#xFF08;&#x9069;&#x5B9C; sudo &#x7B49;&#x3067;&#x3082;&#x7F6E;&#x304D;&#x63DB;&#x3048;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#xFF09;</p><h4 id="&#x74B0;&#x5883;">&#x74B0;&#x5883;</h4><p>&#x8A18;&#x5165;&#x6642;&#x70B9;&#x5168;&#x3066;&#x6700;&#x65B0;&#x3092;&#x5229;&#x7528;</p><table>
+<thead>
+<tr><th>#</th>
+<th>&#x9805;&#x76EE;</th>
+<th>&#x5185;&#x5BB9;</th>
+<th>&#x5099;&#x8003;</th>
+</tr></thead><tbody>
+<tr><td style="text-align:right">1</td>
+<td style="text-align:left">OS</td>
+<td>CentOS Linux release 7.2.1511 (Core)</td>
+<td></td>
+</tr><tr><td style="text-align:right">2</td>
+<td style="text-align:left">Java</td>
+<td>jdk1.8.0_101</td>
+<td>tar.gz &#x7248;&#x3092;&#x5229;&#x7528;</td>
+</tr><tr><td style="text-align:right">3</td>
+<td style="text-align:left">TomEE</td>
+<td>7.0.1 WebProfile (NOT JavaEE7 certified)</td>
+<td>tar.gz &#x7248;&#x3092;&#x5229;&#x7528;</td>
+</tr></tbody></table>
+
+<h4 id="&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;">&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;</h4><h5 id="java">Java</h5><p>&#x6700;&#x65B0;&#x7248;&#x306E; JDK &#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>1 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p><p>2 JDK(download) &#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;</p><p>3 Accept License Agreement &#x306E;&#x30E9;&#x30B8;&#x30AA;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x9078;&#x629E;&#x3002;</p><p>4 Linux x64 &#x306E; tar.gz &#x3092; &#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3002;</p><p>wget &#x306E;&#x5834;&#x5408;&#xFF1A;</p><pre><code class="lang-bash">wget --no-check-certificate --no-cookies --header <span class="hljs-string">&quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;</span> http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz</code></pre>
+<h5 id="tomee">TomEE</h5><p>&#x6700;&#x65B0;&#x7248;&#x306E; TomEE webprofile &#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>1 <a href="http://tomee.apache.org/downloads.html" target="_blank">http://tomee.apache.org/downloads.html</a></p><p>2 Version 7.0.1 &#x306E; WebProfile (NOT JavaEE7 certified)  Format &#x304B;&#x3089; tar.gz &#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3002;</p><p>wget &#x306E;&#x5834;&#x5408;&#xFF1A;</p><pre><code class="lang-bash">wget http://repo.maven.apache.org/maven2/org/apache/tomee/apache-tomee/7.0.1/apache-tomee-7.0.1-webprofile.tar.gz</code></pre>
+<h4 id="&#x89E3;&#x51CD;">&#x89E3;&#x51CD;</h4><p>&#x305D;&#x308C;&#x305E;&#x308C; /opt/ &#x914D;&#x4E0B;&#x306B;&#x89E3;&#x51CD;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">tar zxvf jdk-8u101-linux-x64.tar.gz
+tar zxvf apache-tomee-7.0.1-webprofile.tar.gz</code></pre>
+<h4 id="&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x4F5C;&#x6210;optional">&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x4F5C;&#x6210;(optional)</h4><p>&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x30A2;&#x30C3;&#x30D7;&#x3092;&#x3084;&#x308A;&#x3084;&#x3059;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x304A;&#x304F;&#x3002;</p><p>/opt/ &#x914D;&#x4E0B;&#x3067;&#x4F5C;&#x696D;&#x3002;</p><pre><code class="lang-bash">ln <span class="hljs-_">-s</span> jdk1.8.0_101 jdk-latest
+ln <span class="hljs-_">-s</span> apache-tomee-webprofile-7.0.1 tomee</code></pre>
+<h4 id="tomee-&#x5B9F;&#x884C;&#x30E6;&#x30FC;&#x30B6;&#x4F5C;&#x6210;">TomEE &#x5B9F;&#x884C;&#x30E6;&#x30FC;&#x30B6;&#x4F5C;&#x6210;</h4><pre><code class="lang-bash">useradd tomee
+passwd tomee  <span class="hljs-comment"># Enter &#x5F8C;&#x3001;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#xFF12;&#x56DE;&#x5165;&#x529B;</span></code></pre>
+<p><strong> /home &#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x306F;&#x5229;&#x7528;&#x3057;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;&#x5B9F;&#x884C;&#x30E6;&#x30FC;&#x30B6;&#x306E;&#x307F;&#x306B;&#x3059;&#x308B;&#x7B49;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x304A;&#x597D;&#x307F;&#x3067;&#x3002;</strong></p><h4 id="&#x6A29;&#x9650;&#x5909;&#x66F4;">&#x6A29;&#x9650;&#x5909;&#x66F4;</h4><p>/opt/ &#x914D;&#x4E0B;&#x3067;&#x4F5C;&#x696D;&#x3002;</p><p>&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x81EA;&#x4F53;&#x3068;&#x30EA;&#x30F3;&#x30AF;&#x5148;&#x306E;&#x4E21;&#x65B9;&#x306E;&#x6A29;&#x9650;&#x3092;&#x5909;&#x66F4;&#x3002;</p><pre><code class="lang-bash">chown -h tomee. /opt/tomee
+chown -R tomee. apache-tomee-webprofile-7.0.1</code></pre>
+<h4 id="systemd">Systemd</h4><p>Systemd &#x304B;&#x3089;&#x8D77;&#x52D5;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x5404;&#x7A2E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8FFD;&#x52A0;&#x3068;&#x8D77;&#x52D5;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;&#x3002;</p><h5 id="service-&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8FFD;&#x52A0;">service &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8FFD;&#x52A0;</h5><pre><code class="lang-bash">vim /etc/systemd/system/tomee.service</code></pre>
+<p>/etc/systemd/system/tomee.service:</p><pre><code class="lang-bash">[Unit]
+Description=Apache TomEE
+After=network.target
+
+[Service]
+User=tomee
+Group=tomee
+Type=oneshot
+PIDFile=/opt/tomee/tomee.pid
+RemainAfterExit=yes
+
+EnvironmentFile=/etc/sysconfig/tomee
+ExecStart=/opt/tomee/bin/startup.sh
+ExecStop=/opt/tomee/bin/shutdown.sh
+ExecReStart=/opt/tomee/bin/shutdown.sh;/opt/tomee/bin/startup.sh
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<h5 id="&#x74B0;&#x5883;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8FFD;&#x52A0;">&#x74B0;&#x5883;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x8FFD;&#x52A0;</h5><pre><code class="lang-bash">vim /etc/sysconfig/tomee</code></pre>
+<p>/etc/sysconfig/tomee:</p><pre><code class="lang-bash">JAVA_HOME=<span class="hljs-string">&quot;/opt/jdk-latest/&quot;</span>
+JAVA_OPTS=<span class="hljs-string">&quot;-Djava.security.egd=file:/dev/./urandom&quot;</span></code></pre>
+<h5 id="service-&#x306B;&#x6A29;&#x9650;&#x4ED8;&#x4E0E;">service &#x306B;&#x6A29;&#x9650;&#x4ED8;&#x4E0E;</h5><pre><code class="lang-bash">chmod 755 tomee.service</code></pre>
+<h5 id="systemd-&#x8D77;&#x52D5;&#x78BA;&#x8A8D;">Systemd &#x8D77;&#x52D5;&#x78BA;&#x8A8D;</h5><pre><code class="lang-bash">systemctl start tomee</code></pre>
+<p>&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x51FA;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x78BA;&#x8A8D;</p><pre><code class="lang-bash">ps -ef | grep tomee</code></pre>
+<p>&#x51FA;&#x529B;&#x4F8B;(tomee &#x30E6;&#x30FC;&#x30B6;&#x3067;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070; OK &#x3067;&#x3059;)&#xFF1A;</p><pre><code class="lang-console">tomee     1516     1  3 10:07 ?        00:01:01 /opt/jdk-latest//bin/java -Djava.util.logging.config.file=/opt/tomee/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -javaagent:/opt/tomee/lib/openejb-javaagent.jar -Djava.security.egd=file:/dev/./urandom -Djdk.tls.ephemeralDHKeySize=2048 -classpath /opt/tomee/bin/bootstrap.jar:/opt/tomee/bin/tomcat-juli.jar -Dcatalina.base=/opt/tomee -Dcatalina.home=/opt/tomee -Djava.io.tmpdir=/opt/tomee/temp org.apache.catalina.startup.Bootstrap start</code></pre>
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3067;&#x78BA;&#x8A8D;(Apache Tomcat (TomEE) &#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3070;&#x554F;&#x984C;&#x306A;&#x3057; ):</p><p><a href="http://ServerIP:8080/" target="_blank">http://ServerIP:8080/</a></p><p>&#x305D;&#x306E;&#x4ED6;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3082;&#x78BA;&#x8A8D;&#x3059;&#x308B;:</p><pre><code class="lang-bash">systemctl status tomee
+systemctl restart tomee
+systemctl stop tome</code></pre>
+<p>&#x81EA;&#x52D5;&#x8D77;&#x52D5;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&#xFF08;optional&#xFF09;</p><pre><code class="lang-bash">systemctl <span class="hljs-built_in">enable</span> tomee</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Infra">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TomEE を CentOS7 にインストール","level":"1.3.1","depth":2,"previous":{"title":"Infra","level":"1.3","depth":1,"path":"infra/README.md","ref":"infra/README.md","articles":[{"title":"TomEE を CentOS7 にインストール","level":"1.3.1","depth":2,"path":"infra/tomeeInstallCentOS7.md","ref":"infra/tomeeInstallCentOS7.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"infra/tomeeInstallCentOS7.md","mtime":"2016-09-27T07:37:22.786Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-27T07:47:02.062Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
